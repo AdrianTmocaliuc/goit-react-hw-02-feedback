@@ -1,6 +1,6 @@
-import style from "./SectionTitle.module.css";
+import PropTypes from "prop-types";
 
-// import { Component } from "react";
+import style from "./SectionTitle.module.css";
 
 export const Section = ({ title, children }) => {
   return (
@@ -9,4 +9,8 @@ export const Section = ({ title, children }) => {
       {children}
     </section>
   );
+};
+
+Section.propTypes = {
+  title: PropTypes.string,
 };

@@ -1,4 +1,4 @@
-// import style from "./App.module.css";
+import style from "./App.module.css";
 import { Component } from "react";
 import {
   Statistics,
@@ -25,7 +25,6 @@ class App extends Component {
   }
 
   handleClick = (event) => {
-    console.log(event.target.name);
     const name = event.target.name;
     this.setState((prevState) => {
       return {
@@ -35,7 +34,7 @@ class App extends Component {
   };
   render() {
     return (
-      <>
+      <div className={style.fragment}>
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={Object.keys(this.state)}
@@ -56,7 +55,7 @@ class App extends Component {
             />
           )}
         </Section>
-      </>
+      </div>
     );
   }
 }
