@@ -28,19 +28,22 @@ class App extends Component {
     const name = event.target.name;
     this.setState((prevState) => {
       return {
-        [name]: prevState[name] + 1, //????
+        [name]: prevState[name] + 1,
       };
     });
   };
   render() {
     return (
       <div className={style.fragment}>
-        <Section title="Please leave feedback">
-          <FeedbackOptions
-            options={Object.keys(this.state)}
-            onLeaveFeedback={this.handleClick}
-          />
-        </Section>
+        <Section
+          title="Please leave feedback"
+          children={
+            <FeedbackOptions
+              options={Object.keys(this.state)}
+              onLeaveFeedback={this.handleClick}
+            />
+          }
+        ></Section>
         <Section title="Statistics">
           {this.countTotalFeedback() === 0 ? (
             <Notification message="No feedback given" />
